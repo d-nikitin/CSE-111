@@ -1,0 +1,21 @@
+README
+Big Integer Programming Assignment 1
+Dmitriy Nikitin ID: 1649026
+Files Submitted:
+README
+debug.cpp
+iterstack.h
+main.cpp
+scanner.cpp
+ubigint.h
+Makefile
+bigint.cpp
+debug.h
+libfns.cpp
+scanner.h
+util.cpp
+bigint.h
+libfns.h
+relops.h
+ubigint.cpp
+util.h

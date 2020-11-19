@@ -1,0 +1,25 @@
+==29063== Memcheck, a memory error detector
+==29063== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==29063== Using Valgrind-3.14.0 and LibVEX; rerun with -h for copyright info
+==29063== Command: ./ydc
+==29063== 
+==29063== Invalid read of size 1
+==29063==    at 0x404C31: operator<<(std::ostream&, ubigint const&) (ubigint.cpp:222)
+==29063==    by 0x40893A: operator<<(std::ostream&, bigint const&) (bigint.cpp:133)
+==29063==    by 0x40D4D4: do_printall(iterstack<bigint, std::vector<bigint, std::allocator<bigint> > >&, char) (main.cpp:57)
+==29063==    by 0x40D97A: do_function(iterstack<bigint, std::vector<bigint, std::allocator<bigint> > >&, char) (main.cpp:93)
+==29063==    by 0x40DCC2: main (main.cpp:147)
+==29063==  Address 0x5a25e14 is 0 bytes after a block of size 36 alloc'd
+==29063==    at 0x4C2A483: operator new(unsigned long) (vg_replace_malloc.c:344)
+==29063==    by 0x407B1B: __gnu_cxx::new_allocator<unsigned char>::allocate(unsigned long, void const*) (new_allocator.h:111)
+==29063==    by 0x40789E: std::allocator_traits<std::allocator<unsigned char> >::allocate(std::allocator<unsigned char>&, unsigned long) (alloc_traits.h:436)
+==29063==    by 0x4072E9: std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_M_allocate(unsigned long) (stl_vector.h:296)
+==29063==    by 0x406ACE: std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_M_create_storage(unsigned long) (stl_vector.h:311)
+==29063==    by 0x405AB8: std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_Vector_base(unsigned long, std::allocator<unsigned char> const&) (stl_vector.h:260)
+==29063==    by 0x405643: std::vector<unsigned char, std::allocator<unsigned char> >::vector(std::vector<unsigned char, std::allocator<unsigned char> > const&) (stl_vector.h:460)
+==29063==    by 0x404E86: ubigint::ubigint(ubigint const&) (ubigint.h:16)
+==29063==    by 0x4089B2: bigint::bigint(bigint const&) (bigint.h:17)
+==29063==    by 0x40F2B0: void __gnu_cxx::new_allocator<bigint>::construct<bigint, bigint const&>(bigint*, bigint const&) (new_allocator.h:136)
+==29063==    by 0x40EDE5: void std::allocator_traits<std::allocator<bigint> >::construct<bigint, bigint const&>(std::allocator<bigint>&, bigint*, bigint const&) (alloc_traits.h:475)
+==29063==    by 0x40E8A9: std::vector<bigint, std::allocator<bigint> >::push_back(bigint const&) (stl_vector.h:1079)
+==29063== 
